@@ -8,7 +8,7 @@ class TagsController < ApiController
       tags = tags.search(params[:name]).records
     end
 
-    answer TagRepresenter.new(tags)
+    answer TagsRepresenter.new(tags)
   end
 
   def post
