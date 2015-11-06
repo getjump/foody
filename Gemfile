@@ -42,6 +42,10 @@ gem 'rails_param'
 gem 'rails_12factor', group: :production
 gem 'puma'
 
+# ELASTIC SEARCH
+gem 'elasticsearch-model'
+gem 'elasticsearch-rails'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
