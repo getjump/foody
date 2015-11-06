@@ -13,6 +13,7 @@ FailableAction { bool sucess; } // Actually is void
 
 enum RatingType { Tried, Liked } -> {0, 1}
 
+Likes {  }
 Photo { int id; string photo_1x; }
 Tag { int id; string name; }
 Place { int id; string name; GeoPoint location; }

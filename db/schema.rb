@@ -58,6 +58,8 @@ ActiveRecord::Schema.define(version: 20151106175226) do
   create_table "ratings", force: :cascade do |t|
     t.integer  "food_id"
     t.integer  "user_id"
+    t.integer  "type"
+    t.string   "device"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
