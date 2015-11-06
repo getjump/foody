@@ -46,6 +46,9 @@ gem 'puma'
 gem 'elasticsearch-model'
 gem 'elasticsearch-rails'
 
+# FILE JOB
+gem "paperclip"
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

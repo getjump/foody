@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   get 'tags' => 'tags#get'
   post 'tags' => 'tags#post'
+
+  post 'photos' => 'photos#post'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
