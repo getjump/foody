@@ -47,7 +47,7 @@ gem 'elasticsearch-model'
 gem 'elasticsearch-rails'
 
 # FILE JOB
-gem "paperclip"
+gem "paperclip", "~> 4.3"
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

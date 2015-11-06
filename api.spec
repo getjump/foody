@@ -13,6 +13,8 @@ FailableAction { bool sucess; } // Actually is void
 
 enum RatingType { Tried, Liked } -> {0, 1}
 
+Rating {int tried, liked;}
+
 Likes {  }
 Photo { int id; string photo_1x; }
 Tag { int id; string name; }

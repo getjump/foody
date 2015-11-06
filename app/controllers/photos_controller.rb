@@ -10,8 +10,10 @@ class PhotosController < ApiController
   def post
     # param! :photo, required: true
 
+    photo = params[:photo]
+
     ph = Photo.new
-    ph.photo = params[:photo]
+    ph.photo = photo
     ph.save
   end
 end
