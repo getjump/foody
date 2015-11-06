@@ -1,4 +1,5 @@
-Serialization: ?
+Serialization:
+  [] -> json array
 
 Special Data Types:
 

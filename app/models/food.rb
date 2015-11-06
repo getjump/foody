@@ -1,4 +1,4 @@
 class Food < ActiveRecord::Base
-  belongs_to :photo
+  has_many :photos
   belongs_to :place
 end
