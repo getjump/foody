@@ -30,20 +30,19 @@ ActiveRecord::Schema.define(version: 20151106095136) do
     t.string   "name"
     t.integer  "price"
     t.integer  "place_id"
+    t.integer  "photo_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  add_index "foods", ["photo_id"], name: "index_foods_on_photo_id", using: :btree
   add_index "foods", ["place_id"], name: "index_foods_on_place_id", using: :btree
 
   create_table "photos", force: :cascade do |t|
     t.string   "photo_1x"
-    t.integer  "food_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-
-  add_index "photos", ["food_id"], name: "index_photos_on_food_id", using: :btree
 
   create_table "places", force: :cascade do |t|
     t.string   "name"
@@ -76,8 +75,8 @@ ActiveRecord::Schema.define(version: 20151106095136) do
 
   add_foreign_key "food_tags", "foods"
   add_foreign_key "food_tags", "tags"
+  add_foreign_key "foods", "photos"
   add_foreign_key "foods", "places"
-  add_foreign_key "photos", "foods"
   add_foreign_key "ratings", "foods"
   add_foreign_key "ratings", "users"
 end

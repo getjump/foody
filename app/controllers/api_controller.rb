@@ -2,6 +2,7 @@ require 'multi_json'
 
 class ApiController < ApplicationController
   rescue_from RailsParam::Param::InvalidParameterError, :with => :error_render_method
+  rescue_from ActiveRecord::InvalidForeignKey, :with => :error_render_method_without_output
 
   def answer(object = nil, error = nil)
     obj = ApiAnswer.new
@@ -14,7 +15,7 @@ class ApiController < ApplicationController
       obj.error = error
     end
 
-    logger.debug obj.extend(ApiAnswerRepresenter).to_json
+    # logger.debug obj.extend(ApiAnswerRepresenter).to_json
 
     # logger.warn "*** BEGIN RAW REQUEST HEADERS ***"
     # self.request.env.each do |header|
@@ -24,6 +25,10 @@ class ApiController < ApplicationController
     # logger.warn "*** END RAW REQUEST HEADERS ***"
 
     render json: obj.extend(ApiAnswerRepresenter).to_json
+  end
+
+  def error_render_method_without_output
+    answer nil, {code: 1, message: "something went wrong"}
   end
 
   def error_render_method(exception)

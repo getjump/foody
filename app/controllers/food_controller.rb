@@ -1,14 +1,49 @@
+require 'multi_json'
+
 class FoodController < ApiController
   def get
-    param! :tags
-    param! :price
-    param! :device, String
+    param! :tags, Array, required: false
+    param! :price, Array, required: false
+    param! :device, String, required: false
+
+    food = Food.all
+
+    unless params[:tags].nil?
+      food = food.joins(:tags)
+      params[:tags].each do |tag_id|
+        food = food.where("tags.id" => tag_id)
+      end
+    end
+
+    unless params[:price].nil?
+      price = params[:price]
+      food = food.where(:price => price[0].to_i..price[1].to_i)
+    end
+
+    answer FoodCollectionRepresenter.new(food)
   end
 
   def post
-    param! :tags
+    param! :tags, Array
+    param! :name, String, required: true
     param! :price, Integer, required: true
     param! :photo, Integer, required: true
     param! :place, Integer, required: true
+
+    food = Food.new
+    food.name = params[:name]
+    food.price = params[:price]
+    food.photo_id = params[:photo]
+    food.place_id = params[:place]
+
+    unless params[:tags].nil?
+      params[:tags].each do |tag_id|
+        food.tags << Tag.find(tag_id)
+      end
+    end
+
+    food.save
+
+    answer FoodRepresenter.new(food)
   end
 end
