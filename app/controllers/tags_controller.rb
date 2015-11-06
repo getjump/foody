@@ -5,7 +5,7 @@ class TagsController < ApiController
     tags = Tag.all
 
     unless params[:name].nil?
-      tags = Tag.search(params[:name]).records
+      tags = Tag.search(query: { match: { name: params[:name] } }).records
     end
 
     answer TagsRepresenter.new(tags)
