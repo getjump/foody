@@ -4,7 +4,7 @@ class CreateFoods < ActiveRecord::Migration
       t.string :name
       t.integer :price
       t.references :place, index: true, foreign_key: true
-
+      t.references :photo, index: true, foreign_key: true
       t.timestamps null: false
     end
   end
