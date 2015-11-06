@@ -11,7 +11,7 @@ Range<T> { T min, max; }
 GeoPoint { double lat, long; }
 FailableAction { bool sucess; } // Actually is void
 
-enum RatingType { Tryed, Liked } -> {0, 1}
+enum RatingType { Tried, Liked } -> {0, 1}
 
 Photo { int id; string photo_1x; }
 Tag { int id; string name; }
