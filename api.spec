@@ -6,17 +6,19 @@ Special Data Types:
 Error { int code; string message }
 ApiResponse { T object; Error? error; }
 
+Range<T> { T min, max; }
+
 GeoPoint { double lat, long; }
 FailableAction { bool sucess; } // Actually is void
 
-enum RatingType { Tryed, Liked };
+enum RatingType { Tryed, Liked } -> {0, 1}
 
 Photo { int id; string photo_1x; }
 Tag { int id; string name; }
 Place { int id; string name; GeoPoint location; }
 Food { int id; string name; Photo photo; int price; Place place; }
 Rating { Food food; RatingType type; }
-Device { string device_hash }
+Device { string device_hash } -> device_hash
 
 ? - means Optional, so object could be null!, and should be asked for null before job [] - is array
 
@@ -32,7 +34,7 @@ SO request :
 // REST - GET take some data, POST save some data
 
 /food/
-  GET:/(Tag(id)? tags[], int? price, Device? device) -> ApiResponse<Food[]>
+  GET:/(Tag(id)? tags[], Range<int>? price, Device? device) -> ApiResponse<Food[]>
   POST:/(Tag(id)? tags[], int price, Photo(id) photo, Place(id) place) -> ApiResponse<Food>
 
 /photos/ //
