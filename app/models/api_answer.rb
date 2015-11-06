@@ -1,0 +1,2 @@
+class ApiAnswer < OpenStruct
+end
