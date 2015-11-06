@@ -6,7 +6,10 @@ class PlacesController < ApiController
     places = Place.all
 
     unless params[:name].nil?
+      places = Place.search(query: { match: { name: params[:name] } }).records
+    end
 
+    unless params[:location].nil?
     end
   end
 

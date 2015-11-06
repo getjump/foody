@@ -6,7 +6,7 @@ class RatingsController < ApiController
 
     rating = Rating.new
     rating.food_id = params[:food]
-    rating.device = params[:device]
+    rating.user = User.where(:device_hash => params[:device])
     rating.type = params[:type]
   end
 end

@@ -6,6 +6,11 @@ Rails.application.routes.draw do
   post 'tags' => 'tags#post'
 
   post 'photos' => 'photos#post'
+
+  get 'places' => 'places#get'
+  post 'places' => 'places#post'
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

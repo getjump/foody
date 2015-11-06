@@ -3,6 +3,8 @@ class PhotosController < ApiController
 
   def get
     param! :photo, Integer, required: true
+
+    answer PhotoRepresenter.new(Photo.find(params[:photo]))
   end
 
   def post
