@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   get 'food' => 'food#get'
   post 'food' => 'food#post'
 
+  get 'tags' => 'tags#get'
   post 'tags' => 'tags#post'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
