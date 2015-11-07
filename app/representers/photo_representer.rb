@@ -5,5 +5,5 @@ class PhotoRepresenter < Roar::Decorator
   include Roar::JSON
 
   property :id
-  property :fetch, as: "photo"
+  property :fetch, as: "urls"
 end
