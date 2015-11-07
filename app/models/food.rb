@@ -6,10 +6,11 @@ class Food < ActiveRecord::Base
 
   belongs_to :photo
   has_many :tags, through: :food_tags
+  has_many :ratings
   has_many :food_tags
   belongs_to :place
 
-  def ratings
+  def ratings_count
     liked_count = Rating.where(:food => self, :status => 1).count
     tried_count = Rating.where(:food => self, :status => 0).count
 

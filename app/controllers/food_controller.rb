@@ -27,6 +27,10 @@ class FoodController < ApiController
       end
     end
 
+    food = food.sort {|x, y|
+      (y.ratings_count[:tried] + y.ratings_count[:liked]) <=> (x.ratings_count[:tried] + x.ratings_count[:liked])
+    }
+
     answer FoodCollectionRepresenter.new(food)
   end
 
