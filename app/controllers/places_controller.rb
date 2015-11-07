@@ -2,8 +2,8 @@ class PlacesController < ApiController
   skip_before_action :verify_authenticity_token
 
   def get
-    param! :name, String
-    param! :location
+    param! :name, String, required: false
+    param! :location, required: false
 
     places = Place.all
 
@@ -13,6 +13,8 @@ class PlacesController < ApiController
 
     unless params[:location].nil?
     end
+
+    answer PlaceCollectionRepresenter.new(places)
   end
 
   def post
