@@ -23,5 +23,7 @@ class PlacesController < ApiController
     place.name = params[:name]
     place.location = params[:location]
     place.save
+
+    answer PlaceRepresenter.new(place)
   end
 end
