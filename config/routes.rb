@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'tags' => 'tags#get'
   post 'tags' => 'tags#post'
 
+  get 'photos' => 'photos#get'
   post 'photos' => 'photos#post'
 
   get 'places' => 'places#get'
