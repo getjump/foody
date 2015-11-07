@@ -4,11 +4,16 @@ class FoodController < ApiController
   skip_before_action :verify_authenticity_token
 
   def get
+    param! :search, Array, required: false
     param! :tags, Array, required: false
     param! :price, Array, required: false
     param! :device, String, required: false
 
-    food = Food.all
+    unless params[:search].nil?
+      food = Food.search(query: { match: { name: params[:search] } }).records
+    else
+      food = Food.all
+    end
 
     unless params[:tags].nil?
       food = food.joins(:tags)
