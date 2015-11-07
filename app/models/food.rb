@@ -10,10 +10,10 @@ class Food < ActiveRecord::Base
   belongs_to :place
 
   def ratings
-    tried = Rating.where(:food => self, :status => 0).count
-    liked = Rating.where(:food => self, :status => 1).count
+    liked_count = Rating.where(:food => self, :status => 1).count
+    tried_count = Rating.where(:food => self, :status => 0).count
 
-    return {:tried => tried, :liked => liked}
+    return {:tried => tried_count + liked_count, :liked => liked_count}
   end
 
   def likes

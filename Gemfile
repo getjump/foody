@@ -49,6 +49,8 @@ gem 'elasticsearch-rails'
 # FILE JOB
 gem 'carrierwave', :git => 'git://github.com/carrierwaveuploader/carrierwave.git'
 
+gem 'activeadmin', github: 'activeadmin'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
