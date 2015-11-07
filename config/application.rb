@@ -27,14 +27,17 @@ module Foody
     config.paperclip_defaults = {
       :storage => :s3,
       :s3_region => 'eu-central-1',
+      # :s3_endpoint => 'foody.237.s3.amazonaws.com',
       :s3_credentials => {
         :bucket => ENV['S3_BUCKET'],
         :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
-        :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
+        :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY'],
+        :region => 'eu-central-1',
+        # :endpoint => 'foody.237.s3.amazonaws.com',
       }
     }
 
-    Aws.config[:region] = 'us-west-2'
+    Aws.config[:region] = 'eu-central-1'
 
     Elasticsearch::Model.client = Elasticsearch::Client.new host: ENV['SEARCHBOX_URL']
   end

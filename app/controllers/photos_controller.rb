@@ -8,9 +8,7 @@ class PhotosController < ApiController
 
     photo = Photo.find(params[:photo])
 
-    hash = { :original => photo.photo(:original), :medium => photo.photo(:medium), :thumb => photo.photo(:thumb), :square => photo.photo(:square) }
-
-    answer hash
+    answer photo.fetch
   end
 
   def post
