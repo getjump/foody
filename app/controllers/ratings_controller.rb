@@ -1,4 +1,6 @@
 class RatingsController < ApiController
+  skip_before_action :verify_authenticity_token
+
   def post
     param! :food, Integer, required: true
     param! :status, Integer, required: true
