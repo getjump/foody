@@ -47,7 +47,7 @@ gem 'elasticsearch-model'
 gem 'elasticsearch-rails'
 
 # FILE JOB
-gem "paperclip", "~> 4.3"
+gem 'carrierwave', :git => 'git://github.com/carrierwaveuploader/carrierwave.git'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

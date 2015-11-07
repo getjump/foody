@@ -8,5 +8,6 @@ class FoodRepresenter < Roar::Decorator
   property :price
   property :place, extend: PlaceRepresenter
   property :ratings
+  property :likes
   property :photo, extend: PhotoRepresenter, class: Photo
 end

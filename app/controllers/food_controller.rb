@@ -20,6 +20,13 @@ class FoodController < ApiController
       food = food.where(:price => price[0].to_i..price[1].to_i)
     end
 
+    unless params[:device].nil?
+      user = User.where(:device_hash => params[:device]).take
+      food.each do |f|
+        f.user = user
+      end
+    end
+
     answer FoodCollectionRepresenter.new(food)
   end
 

@@ -14,6 +14,6 @@ class PhotosController < ApiController
 
     ph = Photo.new
     ph.photo = photo
-    ph.save
+    ph.save!
   end
 end
