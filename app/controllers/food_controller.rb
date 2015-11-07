@@ -1,6 +1,8 @@
 require 'multi_json'
 
 class FoodController < ApiController
+  skip_before_action :verify_authenticity_token
+
   def get
     param! :tags, Array, required: false
     param! :price, Array, required: false
@@ -35,6 +37,7 @@ class FoodController < ApiController
   end
 
   def post
+    # /food?tags[]=1&tags[]=2
     param! :tags, Array
     param! :name, String, required: true
     param! :price, Integer, required: true
