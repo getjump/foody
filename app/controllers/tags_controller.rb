@@ -4,10 +4,10 @@ class TagsController < ApiController
   def get
     param! :name, String
 
-    tags = Tag.all
-
     unless params[:name].nil?
-      tags = Tag.search(params[:name]).records
+      tags = Tag.search_by_name(params[:name])
+    else
+      tags = Tag.all
     end
 
     answer TagsRepresenter.new(tags)

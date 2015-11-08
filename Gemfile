@@ -42,6 +42,9 @@ gem 'rails_param'
 gem 'rails_12factor', group: :production
 gem 'puma'
 
+# SEARCH
+gem 'pg_search'
+
 # ELASTIC SEARCH
 gem 'elasticsearch-model'
 gem 'elasticsearch-rails'

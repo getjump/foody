@@ -5,10 +5,10 @@ class PlacesController < ApiController
     param! :name, String, required: false
     param! :location, required: false
 
-    places = Place.all
-
     unless params[:name].nil?
-      places = Place.search(params[:name]).records
+      places = Place.search_by_name(params[:name])
+    else
+      places = Place.all
     end
 
     unless params[:location].nil?

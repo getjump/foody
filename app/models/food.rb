@@ -2,6 +2,16 @@ class Food < ActiveRecord::Base
   include Elasticsearch::Model
   include Elasticsearch::Model::Callbacks
 
+  include PgSearch
+  pg_search_scope :search_by_name, :against => :name, :using =>
+    {
+      :tsearch =>
+        {
+          :prefix => true,
+          :threshold => 0.3
+        }
+    }
+
   attr_accessor :user
 
   belongs_to :photo

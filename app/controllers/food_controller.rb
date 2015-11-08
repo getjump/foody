@@ -10,7 +10,7 @@ class FoodController < ApiController
     param! :device, String, required: false
 
     unless params[:search].nil?
-      food = Food.search(params[:search]).records
+      food = Food.search_by_name(params[:search])
     else
       food = Food.all
     end
