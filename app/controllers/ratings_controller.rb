@@ -8,7 +8,7 @@ class RatingsController < ApiController
 
     rating = Rating.new
     rating.food_id = params[:food]
-    rating.user = User.where(:device_hash => params[:device])
+    rating.user = User.where(:device_hash => params[:device]).take
     rating.status = params[:status]
     rating.save
 
