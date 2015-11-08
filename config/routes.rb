@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   get 'ratings' => 'ratings#get'
   post 'ratings' => 'ratings#post'
+  delete 'ratings' => 'ratings#delete'
 
   get 'photos' => 'photos#get'
   post 'photos' => 'photos#post'

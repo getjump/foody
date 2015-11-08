@@ -14,4 +14,13 @@ class RatingsController < ApiController
 
     answer LikesRepresenter.new(rating)
   end
+
+  def delete
+    param! :food, Integer, required: true
+    param! :device, String, required: true
+
+    rating.where(:food => params[:food], :device => params[:device]).take.destroy
+
+    answer :sucess => true
+  end
 end
