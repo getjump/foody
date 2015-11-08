@@ -4,6 +4,7 @@ require 'roar/json'
 class FoodRepresenter < Roar::Decorator
   include Roar::JSON
 
+  property :id
   property :name
   property :price
   property :place, extend: PlaceRepresenter
