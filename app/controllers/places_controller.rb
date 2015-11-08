@@ -20,10 +20,16 @@ class PlacesController < ApiController
   def post
     param! :name, String, required: true
     param! :location, Array, required: true
+    param! :address, String, required: false
 
     place = Place.new
     place.name = params[:name]
     place.location = params[:location]
+
+    unless params[:address].nil?
+      place.address = params[:address];
+    end
+
     place.save
 
     answer PlaceRepresenter.new(place)
