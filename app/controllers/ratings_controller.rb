@@ -11,5 +11,7 @@ class RatingsController < ApiController
     rating.user = User.where(:device_hash => params[:device])
     rating.status = params[:status]
     rating.save
+
+    answer LikesRepresenter.new(rating)
   end
 end
