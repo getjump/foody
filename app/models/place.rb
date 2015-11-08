@@ -4,8 +4,7 @@ class Place < ActiveRecord::Base
     {
       :tsearch =>
         {
-          :prefix => true,
-          :threshold => 0.3
+          :prefix => true
         }
     }
 end
