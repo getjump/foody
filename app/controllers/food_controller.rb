@@ -49,7 +49,7 @@ class FoodController < ApiController
       end
     end
 
-    fc = FoodCollection.new
+    fc = Collection.new
 
     fc.items = food
 

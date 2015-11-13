@@ -13,6 +13,12 @@ class PlacesController < ApiController
       places = Place.all
     end
 
+    unless params[:location].nil?
+    end
+
+    pc = Collection.new
+    pc.count = places.count
+
     unless params[:count].nil?
       places = places.limit(params[:count])
     end
@@ -21,10 +27,9 @@ class PlacesController < ApiController
       places = places.offset(params[:offset]);
     end
 
-    unless params[:location].nil?
-    end
+    pc.items = places
 
-    answer PlaceCollectionRepresenter.new(places)
+    answer PlaceCollectionRepresenter.new(pc)
   end
 
   def post

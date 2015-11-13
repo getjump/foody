@@ -2,7 +2,8 @@ require 'roar/decorator'
 require 'roar/json'
 
 class PlaceCollectionRepresenter < Roar::Decorator
-  include Representable::JSON::Collection
+  include Representable::JSON
 
-  items extend: PlaceRepresenter
+  property :count
+  collection :items, extend: PlaceRepresenter
 end

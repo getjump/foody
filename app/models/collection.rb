@@ -1,0 +1,2 @@
+class Collection < OpenStruct
+end
