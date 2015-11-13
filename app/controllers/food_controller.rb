@@ -8,11 +8,21 @@ class FoodController < ApiController
     param! :tags, Array, required: false
     param! :price, Array, required: false
     param! :device, String, required: false
+    param! :count, Integer, required: false
+    param! :offset, Integer, required: false
 
     unless params[:search].nil?
-      food = Food.search_by_name(params[:search])
+      food = Food.top.search_by_name(params[:search])
     else
-      food = Food.all
+      food = Food.top
+    end
+
+    unless params[:count].nil?
+      food.limit(params[:count])
+    end
+
+    unless params[:offset].nil?
+      food.offset(params[:offset]);
     end
 
     unless params[:tags].nil?
@@ -33,10 +43,6 @@ class FoodController < ApiController
         f.user = user
       end
     end
-
-    food = food.sort {|x, y|
-      (y.ratings_count[:tried] + y.ratings_count[:liked]) <=> (x.ratings_count[:tried] + x.ratings_count[:liked])
-    }
 
     answer FoodCollectionRepresenter.new(food)
   end

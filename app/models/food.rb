@@ -1,7 +1,4 @@
 class Food < ActiveRecord::Base
-  include Elasticsearch::Model
-  include Elasticsearch::Model::Callbacks
-
   include PgSearch
   pg_search_scope :search_by_name, :against => :name, :using =>
     {
@@ -10,6 +7,8 @@ class Food < ActiveRecord::Base
           :prefix => true
         }
     }
+
+  scope :top, -> { Food.joins('LEFT JOIN ratings ON ratings.food_id = foods.id').select('foods.*, COUNT(ratings.id) AS votes_count').group('foods.id').order('votes_count DESC') }
 
   attr_accessor :user
 
