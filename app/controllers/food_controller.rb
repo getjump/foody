@@ -8,7 +8,7 @@ class FoodController < ApiController
     param! :tags, Array, required: false
     param! :price, Array, required: false
     param! :device, String, required: false
-    param! :count, Integer, required: false, min: 0
+    param! :count, Integer, required: false, min: 0, max: 25, default: 25
     param! :offset, Integer, required: false, min: 0
 
     count = Food.all

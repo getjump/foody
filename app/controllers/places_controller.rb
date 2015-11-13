@@ -4,7 +4,7 @@ class PlacesController < ApiController
   def get
     param! :name, String, required: false
     param! :location, required: false
-    param! :count, Integer, required: false, min: 0
+    param! :count, Integer, required: false, min: 0, max: 100, default: 100
     param! :offset, Integer, required: false, min: 0
 
     unless params[:name].nil?
