@@ -37,19 +37,21 @@ SO request :
 // REST - GET take some data, POST save some data
 
 /food/
-  GET:/(Tag(id)? tags[], Range<int>? price, Device? device) -> ApiResponse<Food[]>
-  POST:/(Tag(id)? tags[], int price, Photo(id) photo, Place(id) place) -> ApiResponse<Food>
+  GET:/(Tag(id)? tags[], int[](0->min, 1->max) price, Device? device, int? count, int? offset, string search) -> ApiResponse<Food[]>
+  POST:/(Tag(id)? tags[], int price, Photo(id) photo, Place(id) place, string name) -> ApiResponse<Food>
 
 /photos/ //
   GET:/(Photo(id) photo) -> ApiResponse<Photo?>
   POST:/(Binary photo) -> ApiResponse<Photo?>
 
 /places/
-  GET:/(Place(name) name, Place(location) location) -> ApiResponse<Place[]>
-  POST:/(Place(name) name, Place(location) location) -> ApiResponse<Place>
+  GET:/(Place(name)? name, Place(location)? location, int? count, int? offset) -> ApiResponse<Place[]>
+  POST:/(Place(name) name, Place(location) location, Place(address)? address) -> ApiResponse<Place>
 
 /ratings/
-  POST:/(Food(id) food, RatingType type, Device device)
+  POST:/(Food(id) food, RatingType status, Device device)
+  DELETE:/(Food(id) food, Device device)
 
 /tags/
   POST:/(Tag(name) name)
+  GET:/(Tag(name)? name)
