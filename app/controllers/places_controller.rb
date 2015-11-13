@@ -4,11 +4,21 @@ class PlacesController < ApiController
   def get
     param! :name, String, required: false
     param! :location, required: false
+    param! :count, Integer, required: false, min: 0
+    param! :offset, Integer, required: false, min: 0
 
     unless params[:name].nil?
       places = Place.search_by_name(params[:name])
     else
       places = Place.all
+    end
+
+    unless params[:count].nil?
+      places = places.limit(params[:count])
+    end
+
+    unless params[:offset].nil?
+      places = places.offset(params[:offset]);
     end
 
     unless params[:location].nil?
