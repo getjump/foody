@@ -11,10 +11,6 @@ class FoodController < ApiController
     param! :count, Integer, required: false
     param! :offset, Integer, required: false
 
-    if params[:offset] < 0 or params[:count] < 0
-      return answer nil, {code: 1, message: "count/offset invalid"}
-    end
-
     count = Food.all
 
     unless params[:search].nil?
