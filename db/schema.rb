@@ -42,7 +42,6 @@ ActiveRecord::Schema.define(version: 20151107060805) do
     t.string   "photo_1x"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
-    t.json     "photo"
     t.string   "photo_file_name"
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
@@ -51,6 +50,7 @@ ActiveRecord::Schema.define(version: 20151107060805) do
 
   create_table "places", force: :cascade do |t|
     t.string   "name"
+    t.string   "address"
     t.point    "location"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

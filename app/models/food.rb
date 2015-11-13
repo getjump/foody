@@ -8,7 +8,11 @@ class Food < ActiveRecord::Base
         }
     }
 
-  scope :top, -> { Food.joins('LEFT JOIN ratings ON ratings.food_id = foods.id').select('foods.*, COUNT(ratings.id) AS votes_count').group('foods.id').order('votes_count DESC') }
+  attr_accessor :groupStr
+
+  scope :top, -> {
+    Food.joins('LEFT JOIN ratings ON ratings.food_id = foods.id').select('foods.*, COUNT(ratings.id) AS votes_count').group("foods.id").order('votes_count DESC')
+  }
 
   attr_accessor :user
 

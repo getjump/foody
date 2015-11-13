@@ -2,7 +2,8 @@ require 'roar/decorator'
 require 'roar/json'
 
 class FoodCollectionRepresenter < Roar::Decorator
-  include Representable::JSON::Collection
+  include Representable::JSON
 
-  items extend: FoodRepresenter
+  property :count
+  collection :items, extend: FoodRepresenter
 end

@@ -11,29 +11,38 @@ class FoodController < ApiController
     param! :count, Integer, required: false
     param! :offset, Integer, required: false
 
+    if params[:offset] < 0 or params[:count] < 0
+      return answer nil, {code: 1, message: "count/offset invalid"}
+    end
+
+    count = Food.all
+
     unless params[:search].nil?
-      food = Food.top.search_by_name(params[:search])
+      food = Food.search_by_name(params[:search]).group("#{PgSearch::Configuration.alias('foods')}.rank").top
+      count = Food.search_by_name(params[:search]).group("#{PgSearch::Configuration.alias('foods')}.rank, foods.id")
     else
       food = Food.top
     end
 
     unless params[:count].nil?
-      food.limit(params[:count])
+      food = food.limit(params[:count])
     end
 
     unless params[:offset].nil?
-      food.offset(params[:offset]);
+      food = food.offset(params[:offset]);
     end
 
     unless params[:tags].nil?
       food = food.joins(:tags)
       params[:tags].each do |tag_id|
+        count = count.where("tags.id" => tag_id)
         food = food.where("tags.id" => tag_id)
       end
     end
 
     unless params[:price].nil?
       price = params[:price]
+      count = count.where(:price => price[0].to_i..price[1].to_i)
       food = food.where(:price => price[0].to_i..price[1].to_i)
     end
 
@@ -44,7 +53,19 @@ class FoodController < ApiController
       end
     end
 
-    answer FoodCollectionRepresenter.new(food)
+    fc = FoodCollection.new
+
+    fc.items = food
+
+    unless count.count.class == Fixnum
+      fc.count = count.count.length
+    else
+      fc.count = count.count
+    end
+
+    obj = FoodCollectionRepresenter.new(fc)
+
+    answer obj
   end
 
   def post
