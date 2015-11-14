@@ -1,7 +1,7 @@
 require 'multi_json'
 
 class ApiController < ApplicationController
-  rescue_from RailsParam::Param::InvalidParameterError, :with => :error_render_method
+  rescue_from Apipie::ParamInvalid, :with => :error_render_method
   rescue_from ActiveRecord::InvalidForeignKey, :with => :error_render_method_without_output
 
   def answer(object = nil, error = nil)
@@ -14,15 +14,6 @@ class ApiController < ApplicationController
     if error != nil
       obj.error = error
     end
-
-    # logger.debug obj.extend(ApiAnswerRepresenter).to_json
-
-    # logger.warn "*** BEGIN RAW REQUEST HEADERS ***"
-    # self.request.env.each do |header|
-    #   logger.warn "HEADER KEY: #{header[0]}"
-    #   logger.warn "HEADER VAL: #{header[1]}"
-    # end
-    # logger.warn "*** END RAW REQUEST HEADERS ***"
 
     render json: obj.extend(ApiAnswerRepresenter).to_json
   end

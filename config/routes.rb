@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  apipie
   get 'food' => 'food#get'
   post 'food' => 'food#post'
 

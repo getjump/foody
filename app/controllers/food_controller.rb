@@ -3,14 +3,22 @@ require 'multi_json'
 class FoodController < ApiController
   skip_before_action :verify_authenticity_token
 
-  def get
-    param! :search, Array, required: false
-    param! :tags, Array, required: false
-    param! :price, Array, required: false
-    param! :device, String, required: false
-    param! :count, Integer, required: false, min: 0, max: 25, default: 25
-    param! :offset, Integer, required: false, min: 0
+  resource_description do
+    formats [:json]
+  end
 
+  api :GET, '/foods', 'Get food'
+  description 'Return basic feed'
+  param :search, String, desc: 'String to search for in database'
+  param :tags, Array, desc: 'Array of tags ids to lookup for items with that tags'
+  param :price, Hash, desc: 'Price array' do
+    param :min, :number, desc: 'Minimal price'
+    param :max, :number, desc: 'Maximal price'
+  end
+  param :count, :number, desc: 'Count of elements to get', min: 0, max: 100
+  param :offset, :number, descs: 'Offset to get elements from', min: 0
+
+  def get
     count = Food.all
 
     unless params[:search].nil?
@@ -30,6 +38,7 @@ class FoodController < ApiController
 
     unless params[:tags].nil?
       food = food.joins(:tags)
+      count = count.joins(:tags)
       params[:tags].each do |tag_id|
         count = count.where("tags.id" => tag_id)
         food = food.where("tags.id" => tag_id)
@@ -38,8 +47,8 @@ class FoodController < ApiController
 
     unless params[:price].nil?
       price = params[:price]
-      count = count.where(:price => price[0].to_i..price[1].to_i)
-      food = food.where(:price => price[0].to_i..price[1].to_i)
+      count = count.where(:price => price[:min]..price[:max])
+      food = food.where(:price => price[:min]..price[:max])
     end
 
     unless params[:device].nil?
@@ -64,14 +73,17 @@ class FoodController < ApiController
     answer obj
   end
 
-  def post
-    # /food?tags[]=1&tags[]=2
-    param! :tags, Array
-    param! :name, String, required: true
-    param! :price, Integer, required: true
-    param! :photo, Integer, required: true
-    param! :place, Integer, required: true
+  api :POST, '/foods', 'Create food'
+  description 'Create food'
+  param :name, String, desc: 'Name that should be assigned to food', required: true
+  param :photo, Integer, desc: 'Id of photo that should be assigned to food', required: true
+  param :place, Integer, desc: 'Id of place that should be assigned to food', required: true
+  param :price, Integer, desc: 'Price of food', required: true
+  param :tags, Array, desc: 'Array of tags ids to add for food' do
+    param "", Integer, desc: 'Tag id'
+  end
 
+  def post
     food = Food.new
     food.name = params[:name]
     food.price = params[:price]

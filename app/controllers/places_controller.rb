@@ -1,12 +1,17 @@
 class PlacesController < ApiController
   skip_before_action :verify_authenticity_token
 
-  def get
-    param! :name, String, required: false
-    param! :location, required: false
-    param! :count, Integer, required: false, min: 0, max: 100, default: 100
-    param! :offset, Integer, required: false, min: 0
+  resource_description do
+    formats [:json]
+  end
 
+  api :GET, '/places', 'Get places'
+  description 'Return places'
+  param :name, String, desc: 'String to search for in database'
+  param :location, Array, desc: 'Array of location'
+  param :count, :number, desc: 'Count of elements to get', min: 0, max: 100
+  param :offset, :number, descs: 'Offset to get elements from', min: 0
+  def get
     unless params[:name].nil?
       places = Place.search_by_name(params[:name])
     else
@@ -32,11 +37,12 @@ class PlacesController < ApiController
     answer PlaceCollectionRepresenter.new(pc)
   end
 
+  api :POST, '/places', 'Add place'
+  description 'Add place'
+  param :name, String, desc: 'Name of a place', required: true
+  param :location, Array, desc: 'Array of location', required: true
+  param :address, String, desc: "String address representation"
   def post
-    param! :name, String, required: true
-    param! :location, Array, required: true
-    param! :address, String, required: false
-
     place = Place.new
     place.name = params[:name]
     place.location = params[:location]

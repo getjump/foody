@@ -1,6 +1,13 @@
 class TagsController < ApiController
   skip_before_action :verify_authenticity_token
 
+  resource_description do
+    formats [:json]
+  end
+
+  api :GET, '/tags', 'Return tags'
+  description 'Return tags'
+  param :name, String, desc: 'Lookup for string in database'
   def get
     param! :name, String
 
@@ -13,6 +20,9 @@ class TagsController < ApiController
     answer TagsRepresenter.new(tags)
   end
 
+  api :POST, '/tags', 'Create tag'
+  description 'Create tag'
+  param :name, String, desc: 'Name for new tag', required: true
   def post
     param! :name, String, required: true
 
