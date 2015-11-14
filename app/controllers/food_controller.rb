@@ -7,7 +7,7 @@ class FoodController < ApiController
     formats [:json]
   end
 
-  api :GET, '/foods', 'Get food'
+  api :GET, '/food', 'Get food'
   description 'Return basic feed'
   param :search, String, desc: 'String to search for in database'
   param :tags, Array, desc: 'Array of tags ids to lookup for items with that tags'
@@ -73,7 +73,7 @@ class FoodController < ApiController
     answer obj
   end
 
-  api :POST, '/foods', 'Create food'
+  api :POST, '/food', 'Create food'
   description 'Create food'
   param :name, String, desc: 'Name that should be assigned to food', required: true
   param :photo, Integer, desc: 'Id of photo that should be assigned to food', required: true
