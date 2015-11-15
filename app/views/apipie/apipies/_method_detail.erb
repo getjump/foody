@@ -39,10 +39,16 @@
 <% end %>
 
 <% unless method[:examples].blank? %>
-  <%= heading(t('apipie.examples'), h_level) %>
-  <% method[:examples].each do |example| %>
-    <pre class="prettyprint"><%= example %></pre>
-  <% end %>
+<a href='#example'
+           class='accordion-toggle'
+           data-toggle='collapse'>
+            <%= heading(t('apipie.examples'), h_level) %>
+          </a>
+          <div class="examples">
+          <% method[:examples].each do |example| %>
+            <pre class="prettyprint collapse accordion-body" id='example' class=><%= example %></pre>
+          <% end %>
+          </div>
 <% end %>
 
 <%= render(:partial => "headers", :locals => {:headers => method[:headers], :h_level => h_level }) %>
