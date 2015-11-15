@@ -7,4 +7,5 @@ Apipie.configure do |config|
   config.default_version         = "v1"
   config.app_info["v1"]          = "Here we go, Foody API Documentation"
   config.copyright               = "&copy; 2015 Pavel Savinov"
+  config.disqus_shortname        = "foodyapi"
 end
