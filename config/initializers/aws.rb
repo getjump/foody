@@ -1,6 +1,6 @@
 Aws.config.update({
   region: 'eu-central-1',
-  credentials: Aws::Credentials.new(ENV['AWS_ACCESS_KEY_ID'], ENV['AWS_SECRET_ACCESS_KEY']),
+  credentials: Aws::Credentials.new(ENV['AWS_ACCESS_KEY_ID'] || "AKIAJXYZ2PT4KEMMJL2Q", ENV['AWS_SECRET_ACCESS_KEY'] || "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"),
   :s3 => { :region => 'eu-central-1' }
 })
 

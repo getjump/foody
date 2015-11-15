@@ -1,7 +1,6 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  name: MyString
-
-two:
-  name: MyString
+---
+Tag_1:
+  id: 1
+  name: vegan
+  created_at: 2015-11-08 02:19:47.931740000 Z
+  updated_at: 2015-11-08 02:19:47.931740000 Z

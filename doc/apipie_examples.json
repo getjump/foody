@@ -1,0 +1,451 @@
+{
+  "food#get": [
+    {
+      "verb": "GET",
+      "path": "/api/v1/food",
+      "versions": [
+        "v1"
+      ],
+      "query": "device=android",
+      "request_data": null,
+      "response_data": {
+        "object": {
+          "count": 4,
+          "items": [
+            {
+              "id": 7,
+              "name": "Шаурма",
+              "price": 120,
+              "place": {
+                "id": 700,
+                "name": "Шаурма на октябрьской",
+                "location": {
+                  "lat": 43.1248559671574,
+                  "long": 131.885652914643
+                }
+              },
+              "ratings": {
+                "tried": 3,
+                "liked": 2
+              },
+              "tags": [
+
+              ],
+              "photo": {
+                "id": 11,
+                "urls": {
+                  "original": "http://foody.237.s3.amazonaws.com/photos/photos/000/000/011/original/67690fd2d6891a999f37a1bbe9d47f00.png?1446961510",
+                  "medium": "http://foody.237.s3.amazonaws.com/photos/photos/000/000/011/medium/67690fd2d6891a999f37a1bbe9d47f00.png?1446961510",
+                  "thumb": "http://foody.237.s3.amazonaws.com/photos/photos/000/000/011/thumb/67690fd2d6891a999f37a1bbe9d47f00.png?1446961510",
+                  "square": "http://foody.237.s3.amazonaws.com/photos/photos/000/000/011/square/67690fd2d6891a999f37a1bbe9d47f00.png?1446961510"
+                }
+              }
+            },
+            {
+              "id": 8,
+              "name": "Хинкале",
+              "price": 1000,
+              "place": {
+                "id": 632,
+                "name": "Чор Минор",
+                "address": "Адмирала Юмашева, 11а",
+                "location": {
+                  "lat": 43.125356,
+                  "long": 131.957655
+                }
+              },
+              "ratings": {
+                "tried": 1,
+                "liked": 1
+              },
+              "tags": [
+
+              ],
+              "photo": {
+                "id": 12,
+                "urls": {
+                  "original": "http://foody.237.s3.amazonaws.com/photos/photos/000/000/012/original/ae0c7b02a5cd0097db519215f53ab1bd.png?1446961582",
+                  "medium": "http://foody.237.s3.amazonaws.com/photos/photos/000/000/012/medium/ae0c7b02a5cd0097db519215f53ab1bd.png?1446961582",
+                  "thumb": "http://foody.237.s3.amazonaws.com/photos/photos/000/000/012/thumb/ae0c7b02a5cd0097db519215f53ab1bd.png?1446961582",
+                  "square": "http://foody.237.s3.amazonaws.com/photos/photos/000/000/012/square/ae0c7b02a5cd0097db519215f53ab1bd.png?1446961582"
+                }
+              }
+            },
+            {
+              "id": 9,
+              "name": "Пянсе",
+              "price": 60,
+              "place": {
+                "id": 701,
+                "name": "Пян-се на Семеновской",
+                "location": {
+                  "lat": 43.1186875822583,
+                  "long": 131.88386220485
+                }
+              },
+              "ratings": {
+                "tried": 0,
+                "liked": 0
+              },
+              "tags": [
+
+              ],
+              "photo": {
+                "id": 14,
+                "urls": {
+                  "original": "http://foody.237.s3.amazonaws.com/photos/photos/000/000/014/original/ebf322e4cb0d3f9eee7447b506ee2d79.png?1446961921",
+                  "medium": "http://foody.237.s3.amazonaws.com/photos/photos/000/000/014/medium/ebf322e4cb0d3f9eee7447b506ee2d79.png?1446961921",
+                  "thumb": "http://foody.237.s3.amazonaws.com/photos/photos/000/000/014/thumb/ebf322e4cb0d3f9eee7447b506ee2d79.png?1446961921",
+                  "square": "http://foody.237.s3.amazonaws.com/photos/photos/000/000/014/square/ebf322e4cb0d3f9eee7447b506ee2d79.png?1446961921"
+                }
+              }
+            },
+            {
+              "id": 10,
+              "name": "Черный бургер",
+              "price": 250,
+              "place": {
+                "id": 697,
+                "name": "Shonkel & Co.",
+                "address": "Адмирала Фокина, 20",
+                "location": {
+                  "lat": 43.117,
+                  "long": 131.885
+                }
+              },
+              "ratings": {
+                "tried": 0,
+                "liked": 0
+              },
+              "tags": [
+
+              ],
+              "photo": {
+                "id": 15,
+                "urls": {
+                  "original": "http://foody.237.s3.amazonaws.com/photos/photos/000/000/015/original/0d49f2d1722f75f1b11cb79a71efb802.png?1446962027",
+                  "medium": "http://foody.237.s3.amazonaws.com/photos/photos/000/000/015/medium/0d49f2d1722f75f1b11cb79a71efb802.png?1446962027",
+                  "thumb": "http://foody.237.s3.amazonaws.com/photos/photos/000/000/015/thumb/0d49f2d1722f75f1b11cb79a71efb802.png?1446962027",
+                  "square": "http://foody.237.s3.amazonaws.com/photos/photos/000/000/015/square/0d49f2d1722f75f1b11cb79a71efb802.png?1446962027"
+                }
+              }
+            }
+          ]
+        }
+      },
+      "code": "200",
+      "show_in_doc": 1,
+      "recorded": true
+    },
+    {
+      "verb": "GET",
+      "path": "/api/v1/food",
+      "versions": [
+        "v1"
+      ],
+      "query": "count=2000",
+      "request_data": null,
+      "response_data": {
+        "error": {
+          "code": 1,
+          "message": "Invalid parameter 'count' value \"2000\": Must be at max 100, and at min 0."
+        }
+      },
+      "code": "500",
+      "show_in_doc": 0,
+      "recorded": true
+    },
+    {
+      "verb": "GET",
+      "path": "/api/v1/food",
+      "versions": [
+        "v1"
+      ],
+      "query": "count=2000",
+      "request_data": null,
+      "response_data": {
+        "error": {
+          "code": 1,
+          "message": "Invalid parameter 'count' value \"-1\": Must be at max 100, and at min 0."
+        }
+      },
+      "code": "500",
+      "show_in_doc": 0,
+      "recorded": true
+    }
+  ],
+  "food#post": [
+    {
+      "verb": "POST",
+      "path": "/api/v1/food",
+      "versions": [
+        "v1"
+      ],
+      "query": null,
+      "request_data": {
+        "name": "Test",
+        "photo": "11",
+        "place": "697",
+        "price": "1337"
+      },
+      "response_data": {
+        "object": {
+          "id": 11,
+          "name": "Test",
+          "price": 1337,
+          "place": {
+            "id": 697,
+            "name": "Shonkel & Co.",
+            "address": "Адмирала Фокина, 20",
+            "location": {
+              "lat": 43.117,
+              "long": 131.885
+            }
+          },
+          "ratings": {
+            "tried": 0,
+            "liked": 0
+          },
+          "tags": [
+
+          ],
+          "photo": {
+            "id": 11,
+            "urls": {
+              "original": "http://foody.237.s3.amazonaws.com/photos/photos/000/000/011/original/67690fd2d6891a999f37a1bbe9d47f00.png?1446961510",
+              "medium": "http://foody.237.s3.amazonaws.com/photos/photos/000/000/011/medium/67690fd2d6891a999f37a1bbe9d47f00.png?1446961510",
+              "thumb": "http://foody.237.s3.amazonaws.com/photos/photos/000/000/011/thumb/67690fd2d6891a999f37a1bbe9d47f00.png?1446961510",
+              "square": "http://foody.237.s3.amazonaws.com/photos/photos/000/000/011/square/67690fd2d6891a999f37a1bbe9d47f00.png?1446961510"
+            }
+          }
+        }
+      },
+      "code": "200",
+      "show_in_doc": 1,
+      "recorded": true
+    }
+  ],
+  "photos#get": [
+    {
+      "verb": "GET",
+      "path": "/api/v1/photos",
+      "versions": [
+        "v1"
+      ],
+      "query": "photo=11",
+      "request_data": null,
+      "response_data": {
+        "object": {
+          "id": 11,
+          "urls": {
+            "original": "http://foody.237.s3.amazonaws.com/photos/photos/000/000/011/original/67690fd2d6891a999f37a1bbe9d47f00.png?1446961510",
+            "medium": "http://foody.237.s3.amazonaws.com/photos/photos/000/000/011/medium/67690fd2d6891a999f37a1bbe9d47f00.png?1446961510",
+            "thumb": "http://foody.237.s3.amazonaws.com/photos/photos/000/000/011/thumb/67690fd2d6891a999f37a1bbe9d47f00.png?1446961510",
+            "square": "http://foody.237.s3.amazonaws.com/photos/photos/000/000/011/square/67690fd2d6891a999f37a1bbe9d47f00.png?1446961510"
+          }
+        }
+      },
+      "code": "200",
+      "show_in_doc": 1,
+      "recorded": true
+    }
+  ],
+  "photos#post": [
+    {
+      "verb": "POST",
+      "path": "/api/v1/photos",
+      "versions": [
+        "v1"
+      ],
+      "query": null,
+      "request_data": {
+        "photo": "R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs"
+      },
+      "response_data": {
+        "object": {
+          "id": 16,
+          "urls": {
+            "original": "http://foody.237.s3.amazonaws.com/photos/photos/000/000/016/original/80ccb60f58f9a49e12bf834b6c732c42.png?1447582623",
+            "medium": "http://foody.237.s3.amazonaws.com/photos/photos/000/000/016/medium/80ccb60f58f9a49e12bf834b6c732c42.png?1447582623",
+            "thumb": "http://foody.237.s3.amazonaws.com/photos/photos/000/000/016/thumb/80ccb60f58f9a49e12bf834b6c732c42.png?1447582623",
+            "square": "http://foody.237.s3.amazonaws.com/photos/photos/000/000/016/square/80ccb60f58f9a49e12bf834b6c732c42.png?1447582623"
+          }
+        }
+      },
+      "code": "200",
+      "show_in_doc": 1,
+      "recorded": true
+    }
+  ],
+  "places#get": [
+    {
+      "verb": "GET",
+      "path": "/api/v1/places",
+      "versions": [
+        "v1"
+      ],
+      "query": "",
+      "request_data": null,
+      "response_data": {
+        "object": {
+          "count": 4,
+          "items": [
+            {
+              "id": 632,
+              "name": "Чор Минор",
+              "address": "Адмирала Юмашева, 11а",
+              "location": {
+                "lat": 43.125356,
+                "long": 131.957655
+              }
+            },
+            {
+              "id": 697,
+              "name": "Shonkel & Co.",
+              "address": "Адмирала Фокина, 20",
+              "location": {
+                "lat": 43.117,
+                "long": 131.885
+              }
+            },
+            {
+              "id": 700,
+              "name": "Шаурма на октябрьской",
+              "location": {
+                "lat": 43.1248559671574,
+                "long": 131.885652914643
+              }
+            },
+            {
+              "id": 701,
+              "name": "Пян-се на Семеновской",
+              "location": {
+                "lat": 43.1186875822583,
+                "long": 131.88386220485
+              }
+            }
+          ]
+        }
+      },
+      "code": "200",
+      "show_in_doc": 1,
+      "recorded": true
+    }
+  ],
+  "places#post": [
+    {
+      "verb": "POST",
+      "path": "/api/v1/places",
+      "versions": [
+        "v1"
+      ],
+      "query": null,
+      "request_data": {
+        "name": "test",
+        "address": "test",
+        "location": [
+          "43.125356",
+          "131.957655"
+        ]
+      },
+      "response_data": {
+        "object": {
+          "id": 702,
+          "name": "test",
+          "address": "test",
+          "location": {
+            "lat": 43.125356,
+            "long": 131.957655
+          }
+        }
+      },
+      "code": "200",
+      "show_in_doc": 1,
+      "recorded": true
+    }
+  ],
+  "ratings#delete": [
+    {
+      "verb": "DELETE",
+      "path": "/api/v1/ratings",
+      "versions": [
+        "v1"
+      ],
+      "query": "device=ios&food=7",
+      "request_data": null,
+      "response_data": {
+        "object": {
+          "sucess": true
+        }
+      },
+      "code": "200",
+      "show_in_doc": 1,
+      "recorded": true
+    }
+  ],
+  "ratings#post": [
+    {
+      "verb": "POST",
+      "path": "/api/v1/ratings",
+      "versions": [
+        "v1"
+      ],
+      "query": null,
+      "request_data": {
+        "food": "7",
+        "status": "0",
+        "device": "ios"
+      },
+      "response_data": {
+        "object": {
+          "status": 0
+        }
+      },
+      "code": "200",
+      "show_in_doc": 1,
+      "recorded": true
+    }
+  ],
+  "tags#get": [
+    {
+      "verb": "GET",
+      "path": "/api/v1/tags",
+      "versions": [
+        "v1"
+      ],
+      "query": "",
+      "request_data": null,
+      "response_data": {
+        "object": [
+          {
+            "name": "vegan"
+          }
+        ]
+      },
+      "code": "200",
+      "show_in_doc": 1,
+      "recorded": true
+    }
+  ],
+  "tags#post": [
+    {
+      "verb": "POST",
+      "path": "/api/v1/tags",
+      "versions": [
+        "v1"
+      ],
+      "query": null,
+      "request_data": {
+        "name": "test"
+      },
+      "response_data": {
+        "object": {
+          "success": true
+        }
+      },
+      "code": "200",
+      "show_in_doc": 1,
+      "recorded": true
+    }
+  ]
+}

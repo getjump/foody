@@ -1,9 +1,29 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  food_id: 
-  user_id: 
-
-two:
-  food_id: 
-  user_id: 
+---
+Rating_1:
+  id: 30
+  food_id: 7
+  user_id: 1
+  status: 1
+  created_at: 2015-11-08 07:06:47.891541000 Z
+  updated_at: 2015-11-08 07:06:47.891541000 Z
+Rating_2:
+  id: 31
+  food_id: 7
+  user_id: 1
+  status: 1
+  created_at: 2015-11-08 07:06:48.688828000 Z
+  updated_at: 2015-11-08 07:06:48.688828000 Z
+Rating_3:
+  id: 32
+  food_id: 7
+  user_id: 1
+  status: 0
+  created_at: 2015-11-08 07:06:54.608320000 Z
+  updated_at: 2015-11-08 07:06:54.608320000 Z
+Rating_4:
+  id: 33
+  food_id: 8
+  user_id: 1
+  status: 1
+  created_at: 2015-11-08 07:07:09.511077000 Z
+  updated_at: 2015-11-08 07:07:09.511077000 Z

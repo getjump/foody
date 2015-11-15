@@ -1,0 +1,1231 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>API documentation</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <link type='text/css' rel='stylesheet' href='./apidoc/stylesheets/bundled/bootstrap.min.css'/>
+<link type='text/css' rel='stylesheet' href='./apidoc/stylesheets/bundled/prettify.css'/>
+<link type='text/css' rel='stylesheet' href='./apidoc/stylesheets/bundled/bootstrap-responsive.min.css'/>
+  <link type='text/css' rel='stylesheet' href='./apidoc/stylesheets/application.css'/>
+  <!-- IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div id='container'>
+          <h4><a href='#food'>Food</a></h4>
+  <ul>
+      <li><a href='#food-get'>get</a></li>
+      <li><a href='#food-post'>post</a></li>
+  </ul>
+  <h4><a href='#photos'>Photos</a></h4>
+  <ul>
+      <li><a href='#photos-get'>get</a></li>
+      <li><a href='#photos-post'>post</a></li>
+  </ul>
+  <h4><a href='#places'>Places</a></h4>
+  <ul>
+      <li><a href='#places-get'>get</a></li>
+      <li><a href='#places-post'>post</a></li>
+  </ul>
+  <h4><a href='#ratings'>Ratings</a></h4>
+  <ul>
+      <li><a href='#ratings-post'>post</a></li>
+      <li><a href='#ratings-delete'>delete</a></li>
+  </ul>
+  <h4><a href='#tags'>Tags</a></h4>
+  <ul>
+      <li><a href='#tags-get'>get</a></li>
+      <li><a href='#tags-post'>post</a></li>
+  </ul>
+
+
+
+<div>
+<p>Here we go, Foody API Documentation</p>
+</div>
+
+<hr>
+
+
+  <ul class='breadcrumb'  id='food'>
+    <li><a href='#'>Foody API</a><span class='divider'>/</span></li>
+    <li class='active'>Food</li>
+  </ul>
+
+  <div class='page-header'>
+    <h1>
+      <a href='#food'>Food</a><br>
+      <small></small>
+    </h1>
+  </div>
+
+
+  <div class='accordion' id='accordion'>
+
+      <hr>
+
+      <ul class='breadcrumb' id='food-get'>
+        <li>
+          <a href='#'>Foody API</a>
+          <span class='divider'>/</span>
+        </li>
+        <li>
+          <a href='#food'>Food</a>
+          <span class='divider'>/</span>
+        </li>
+        <li class='active'>get</li>
+      </ul>
+
+      <div>
+          <h3>
+            <a href='#food-get'>
+              GET /api/v1/food
+            </a><br>
+            <small>Get food</small>
+          </h3>
+      </div>
+
+      <div>
+        
+<p>Return basic feed</p>
+
+
+
+          <h2>Params</h2>
+          <table class='table'>
+            <thead>
+              <tr>
+                <th>Param name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>search </strong><br>
+      <small>
+        optional
+        
+      </small>
+    </td>
+    <td>
+      
+<p>String to search for in database</p>
+
+        <br>
+        Value: 
+<p>Must be String</p>
+
+
+
+    </td>
+
+  </tr>
+
+  
+  <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>tags </strong><br>
+      <small>
+        optional
+        
+      </small>
+    </td>
+    <td>
+      
+<p>Array of tags ids to lookup for items with that tags</p>
+
+        <br>
+        Value: 
+<p>Must be an array of any type</p>
+
+
+
+    </td>
+
+  </tr>
+
+  
+  <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>price </strong><br>
+      <small>
+        optional
+        
+      </small>
+    </td>
+    <td>
+      
+<p>Price array</p>
+
+        <br>
+        Value: 
+<p>Must be a Hash</p>
+
+
+
+    </td>
+
+  </tr>
+
+    <tr style='background-color:rgb(250,250,250);'>
+    <td>
+      <strong>price[min] </strong><br>
+      <small>
+        optional
+        
+      </small>
+    </td>
+    <td>
+      
+<p>Minimal price</p>
+
+        <br>
+        Value: 
+<p>Must be a number.</p>
+
+
+
+    </td>
+
+  </tr>
+
+  
+  <tr style='background-color:rgb(250,250,250);'>
+    <td>
+      <strong>price[max] </strong><br>
+      <small>
+        optional
+        
+      </small>
+    </td>
+    <td>
+      
+<p>Maximal price</p>
+
+        <br>
+        Value: 
+<p>Must be a number.</p>
+
+
+
+    </td>
+
+  </tr>
+
+  
+
+  <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>count </strong><br>
+      <small>
+        optional
+        
+      </small>
+    </td>
+    <td>
+      
+<p>Count of elements to get</p>
+
+        <br>
+        Value: 
+<p>Must be at max 100, and at min 0.</p>
+
+
+
+    </td>
+
+  </tr>
+
+  
+  <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>offset </strong><br>
+      <small>
+        optional
+        
+      </small>
+    </td>
+    <td>
+      
+        <br>
+        Value: 
+<p>Must be a number.</p>
+
+
+
+    </td>
+
+  </tr>
+
+  
+
+            </tbody>
+          </table>
+      </div>
+      <hr>
+
+      <ul class='breadcrumb' id='food-post'>
+        <li>
+          <a href='#'>Foody API</a>
+          <span class='divider'>/</span>
+        </li>
+        <li>
+          <a href='#food'>Food</a>
+          <span class='divider'>/</span>
+        </li>
+        <li class='active'>post</li>
+      </ul>
+
+      <div>
+          <h3>
+            <a href='#food-post'>
+              POST /api/v1/food
+            </a><br>
+            <small>Create food</small>
+          </h3>
+      </div>
+
+      <div>
+        
+<p>Create food</p>
+
+
+
+          <h2>Params</h2>
+          <table class='table'>
+            <thead>
+              <tr>
+                <th>Param name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>name </strong><br>
+      <small>
+        required
+        
+      </small>
+    </td>
+    <td>
+      
+<p>Name that should be assigned to food</p>
+
+        <br>
+        Value: 
+<p>Must be String</p>
+
+
+
+    </td>
+
+  </tr>
+
+  
+  <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>photo </strong><br>
+      <small>
+        required
+        
+      </small>
+    </td>
+    <td>
+      
+<p>Id of photo that should be assigned to food</p>
+
+        <br>
+        Value: 
+<p>Must be Integer</p>
+
+
+
+    </td>
+
+  </tr>
+
+  
+  <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>place </strong><br>
+      <small>
+        required
+        
+      </small>
+    </td>
+    <td>
+      
+<p>Id of place that should be assigned to food</p>
+
+        <br>
+        Value: 
+<p>Must be Integer</p>
+
+
+
+    </td>
+
+  </tr>
+
+  
+  <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>price </strong><br>
+      <small>
+        required
+        
+      </small>
+    </td>
+    <td>
+      
+<p>Price of food</p>
+
+        <br>
+        Value: 
+<p>Must be Integer</p>
+
+
+
+    </td>
+
+  </tr>
+
+  
+  <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>tags </strong><br>
+      <small>
+        optional
+        
+      </small>
+    </td>
+    <td>
+      
+<p>Array of tags ids to add for food</p>
+
+        <br>
+        Value: 
+<p>Must be an Array of nested elements</p>
+
+
+
+    </td>
+
+  </tr>
+
+    <tr style='background-color:rgb(250,250,250);'>
+    <td>
+      <strong>tags[] </strong><br>
+      <small>
+        optional
+        
+      </small>
+    </td>
+    <td>
+      
+<p>Tag id</p>
+
+        <br>
+        Value: 
+<p>Must be Integer</p>
+
+
+
+    </td>
+
+  </tr>
+
+  
+
+
+            </tbody>
+          </table>
+      </div>
+  </div>
+
+  <ul class='breadcrumb'  id='photos'>
+    <li><a href='#'>Foody API</a><span class='divider'>/</span></li>
+    <li class='active'>Photos</li>
+  </ul>
+
+  <div class='page-header'>
+    <h1>
+      <a href='#photos'>Photos</a><br>
+      <small></small>
+    </h1>
+  </div>
+
+
+  <div class='accordion' id='accordion'>
+
+      <hr>
+
+      <ul class='breadcrumb' id='photos-get'>
+        <li>
+          <a href='#'>Foody API</a>
+          <span class='divider'>/</span>
+        </li>
+        <li>
+          <a href='#photos'>Photos</a>
+          <span class='divider'>/</span>
+        </li>
+        <li class='active'>get</li>
+      </ul>
+
+      <div>
+          <h3>
+            <a href='#photos-get'>
+              GET /api/v1/photos
+            </a><br>
+            <small>Return photo by id</small>
+          </h3>
+      </div>
+
+      <div>
+        
+
+
+          <h2>Params</h2>
+          <table class='table'>
+            <thead>
+              <tr>
+                <th>Param name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>photo </strong><br>
+      <small>
+        required
+        
+      </small>
+    </td>
+    <td>
+      
+<p>Photo id</p>
+
+        <br>
+        Value: 
+<p>Must be a number.</p>
+
+
+
+    </td>
+
+  </tr>
+
+  
+
+            </tbody>
+          </table>
+      </div>
+      <hr>
+
+      <ul class='breadcrumb' id='photos-post'>
+        <li>
+          <a href='#'>Foody API</a>
+          <span class='divider'>/</span>
+        </li>
+        <li>
+          <a href='#photos'>Photos</a>
+          <span class='divider'>/</span>
+        </li>
+        <li class='active'>post</li>
+      </ul>
+
+      <div>
+          <h3>
+            <a href='#photos-post'>
+              POST /api/v1/photos
+            </a><br>
+            <small>Upload photo</small>
+          </h3>
+      </div>
+
+      <div>
+        
+
+
+          <h2>Params</h2>
+          <table class='table'>
+            <thead>
+              <tr>
+                <th>Param name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>photo </strong><br>
+      <small>
+        required
+        
+      </small>
+    </td>
+    <td>
+      
+<p>Base64 encoded photo</p>
+
+        <br>
+        Value: 
+<p>Must be String</p>
+
+
+
+    </td>
+
+  </tr>
+
+  
+
+            </tbody>
+          </table>
+      </div>
+  </div>
+
+  <ul class='breadcrumb'  id='places'>
+    <li><a href='#'>Foody API</a><span class='divider'>/</span></li>
+    <li class='active'>Places</li>
+  </ul>
+
+  <div class='page-header'>
+    <h1>
+      <a href='#places'>Places</a><br>
+      <small></small>
+    </h1>
+  </div>
+
+
+  <div class='accordion' id='accordion'>
+
+      <hr>
+
+      <ul class='breadcrumb' id='places-get'>
+        <li>
+          <a href='#'>Foody API</a>
+          <span class='divider'>/</span>
+        </li>
+        <li>
+          <a href='#places'>Places</a>
+          <span class='divider'>/</span>
+        </li>
+        <li class='active'>get</li>
+      </ul>
+
+      <div>
+          <h3>
+            <a href='#places-get'>
+              GET /api/v1/places
+            </a><br>
+            <small>Get places</small>
+          </h3>
+      </div>
+
+      <div>
+        
+<p>Return places</p>
+
+
+
+          <h2>Params</h2>
+          <table class='table'>
+            <thead>
+              <tr>
+                <th>Param name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>name </strong><br>
+      <small>
+        optional
+        
+      </small>
+    </td>
+    <td>
+      
+<p>String to search for in database</p>
+
+        <br>
+        Value: 
+<p>Must be String</p>
+
+
+
+    </td>
+
+  </tr>
+
+  
+  <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>location </strong><br>
+      <small>
+        optional
+        
+      </small>
+    </td>
+    <td>
+      
+<p>Array of location</p>
+
+        <br>
+        Value: 
+<p>Must be an array of any type</p>
+
+
+
+    </td>
+
+  </tr>
+
+  
+  <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>count </strong><br>
+      <small>
+        optional
+        
+      </small>
+    </td>
+    <td>
+      
+<p>Count of elements to get</p>
+
+        <br>
+        Value: 
+<p>Must be at max 100, and at min 0.</p>
+
+
+
+    </td>
+
+  </tr>
+
+  
+  <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>offset </strong><br>
+      <small>
+        optional
+        
+      </small>
+    </td>
+    <td>
+      
+        <br>
+        Value: 
+<p>Must be a number.</p>
+
+
+
+    </td>
+
+  </tr>
+
+  
+
+            </tbody>
+          </table>
+      </div>
+      <hr>
+
+      <ul class='breadcrumb' id='places-post'>
+        <li>
+          <a href='#'>Foody API</a>
+          <span class='divider'>/</span>
+        </li>
+        <li>
+          <a href='#places'>Places</a>
+          <span class='divider'>/</span>
+        </li>
+        <li class='active'>post</li>
+      </ul>
+
+      <div>
+          <h3>
+            <a href='#places-post'>
+              POST /api/v1/places
+            </a><br>
+            <small>Add place</small>
+          </h3>
+      </div>
+
+      <div>
+        
+<p>Add place</p>
+
+
+
+          <h2>Params</h2>
+          <table class='table'>
+            <thead>
+              <tr>
+                <th>Param name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>name </strong><br>
+      <small>
+        required
+        
+      </small>
+    </td>
+    <td>
+      
+<p>Name of a place</p>
+
+        <br>
+        Value: 
+<p>Must be String</p>
+
+
+
+    </td>
+
+  </tr>
+
+  
+  <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>location </strong><br>
+      <small>
+        required
+        
+      </small>
+    </td>
+    <td>
+      
+<p>Array of location</p>
+
+        <br>
+        Value: 
+<p>Must be an array of any type</p>
+
+
+
+    </td>
+
+  </tr>
+
+  
+  <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>address </strong><br>
+      <small>
+        optional
+        
+      </small>
+    </td>
+    <td>
+      
+<p>String address representation</p>
+
+        <br>
+        Value: 
+<p>Must be String</p>
+
+
+
+    </td>
+
+  </tr>
+
+  
+
+            </tbody>
+          </table>
+      </div>
+  </div>
+
+  <ul class='breadcrumb'  id='ratings'>
+    <li><a href='#'>Foody API</a><span class='divider'>/</span></li>
+    <li class='active'>Ratings</li>
+  </ul>
+
+  <div class='page-header'>
+    <h1>
+      <a href='#ratings'>Ratings</a><br>
+      <small></small>
+    </h1>
+  </div>
+
+
+  <div class='accordion' id='accordion'>
+
+      <hr>
+
+      <ul class='breadcrumb' id='ratings-post'>
+        <li>
+          <a href='#'>Foody API</a>
+          <span class='divider'>/</span>
+        </li>
+        <li>
+          <a href='#ratings'>Ratings</a>
+          <span class='divider'>/</span>
+        </li>
+        <li class='active'>post</li>
+      </ul>
+
+      <div>
+          <h3>
+            <a href='#ratings-post'>
+              POST /api/v1/ratings
+            </a><br>
+            <small>Add like</small>
+          </h3>
+      </div>
+
+      <div>
+        
+<p>Add like to object</p>
+
+
+
+          <h2>Params</h2>
+          <table class='table'>
+            <thead>
+              <tr>
+                <th>Param name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>food </strong><br>
+      <small>
+        required
+        
+      </small>
+    </td>
+    <td>
+      
+<p>Id of food</p>
+
+        <br>
+        Value: 
+<p>Must be a number.</p>
+
+
+
+    </td>
+
+  </tr>
+
+  
+  <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>status </strong><br>
+      <small>
+        required
+        
+      </small>
+    </td>
+    <td>
+      
+<p>Like type, 0 - tried, 1 - liked</p>
+
+        <br>
+        Value: 
+<p>Must be a number.</p>
+
+
+
+    </td>
+
+  </tr>
+
+  
+  <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>device </strong><br>
+      <small>
+        required
+        
+      </small>
+    </td>
+    <td>
+      
+<p>Device hash to associate like with</p>
+
+        <br>
+        Value: 
+<p>Must be String</p>
+
+
+
+    </td>
+
+  </tr>
+
+  
+
+            </tbody>
+          </table>
+      </div>
+      <hr>
+
+      <ul class='breadcrumb' id='ratings-delete'>
+        <li>
+          <a href='#'>Foody API</a>
+          <span class='divider'>/</span>
+        </li>
+        <li>
+          <a href='#ratings'>Ratings</a>
+          <span class='divider'>/</span>
+        </li>
+        <li class='active'>delete</li>
+      </ul>
+
+      <div>
+          <h3>
+            <a href='#ratings-delete'>
+              DELETE /api/v1/ratings
+            </a><br>
+            <small>Remove like</small>
+          </h3>
+      </div>
+
+      <div>
+        
+<p>Remove like from object</p>
+
+
+
+          <h2>Params</h2>
+          <table class='table'>
+            <thead>
+              <tr>
+                <th>Param name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>food </strong><br>
+      <small>
+        required
+        
+      </small>
+    </td>
+    <td>
+      
+<p>Id of food</p>
+
+        <br>
+        Value: 
+<p>Must be a number.</p>
+
+
+
+    </td>
+
+  </tr>
+
+  
+  <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>device </strong><br>
+      <small>
+        required
+        
+      </small>
+    </td>
+    <td>
+      
+<p>Device hash</p>
+
+        <br>
+        Value: 
+<p>Must be String</p>
+
+
+
+    </td>
+
+  </tr>
+
+  
+
+            </tbody>
+          </table>
+      </div>
+  </div>
+
+  <ul class='breadcrumb'  id='tags'>
+    <li><a href='#'>Foody API</a><span class='divider'>/</span></li>
+    <li class='active'>Tags</li>
+  </ul>
+
+  <div class='page-header'>
+    <h1>
+      <a href='#tags'>Tags</a><br>
+      <small></small>
+    </h1>
+  </div>
+
+
+  <div class='accordion' id='accordion'>
+
+      <hr>
+
+      <ul class='breadcrumb' id='tags-get'>
+        <li>
+          <a href='#'>Foody API</a>
+          <span class='divider'>/</span>
+        </li>
+        <li>
+          <a href='#tags'>Tags</a>
+          <span class='divider'>/</span>
+        </li>
+        <li class='active'>get</li>
+      </ul>
+
+      <div>
+          <h3>
+            <a href='#tags-get'>
+              GET /api/v1/tags
+            </a><br>
+            <small>Return tags</small>
+          </h3>
+      </div>
+
+      <div>
+        
+<p>Return tags</p>
+
+
+
+          <h2>Params</h2>
+          <table class='table'>
+            <thead>
+              <tr>
+                <th>Param name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>name </strong><br>
+      <small>
+        optional
+        
+      </small>
+    </td>
+    <td>
+      
+<p>Lookup for string in database</p>
+
+        <br>
+        Value: 
+<p>Must be String</p>
+
+
+
+    </td>
+
+  </tr>
+
+  
+
+            </tbody>
+          </table>
+      </div>
+      <hr>
+
+      <ul class='breadcrumb' id='tags-post'>
+        <li>
+          <a href='#'>Foody API</a>
+          <span class='divider'>/</span>
+        </li>
+        <li>
+          <a href='#tags'>Tags</a>
+          <span class='divider'>/</span>
+        </li>
+        <li class='active'>post</li>
+      </ul>
+
+      <div>
+          <h3>
+            <a href='#tags-post'>
+              POST /api/v1/tags
+            </a><br>
+            <small>Create tag</small>
+          </h3>
+      </div>
+
+      <div>
+        
+<p>Create tag</p>
+
+
+
+          <h2>Params</h2>
+          <table class='table'>
+            <thead>
+              <tr>
+                <th>Param name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>name </strong><br>
+      <small>
+        required
+        
+      </small>
+    </td>
+    <td>
+      
+<p>Name for new tag</p>
+
+        <br>
+        Value: 
+<p>Must be String</p>
+
+
+
+    </td>
+
+  </tr>
+
+  
+
+            </tbody>
+          </table>
+      </div>
+  </div>
+
+  
+
+        
+      </div>
+    </div>
+    <hr>
+    <footer>&copy; 2015 Pavel Savinov</footer>
+  </div>
+  <script type='text/javascript' src='./apidoc/javascripts/bundled/jquery-1.7.2.js'></script>
+<script type='text/javascript' src='./apidoc/javascripts/bundled/bootstrap-collapse.js'></script>
+<script type='text/javascript' src='./apidoc/javascripts/bundled/prettify.js'></script>
+<script type='text/javascript' src='./apidoc/javascripts/apipie.js'></script>
+</body>
+</html>

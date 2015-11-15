@@ -1,13 +1,33 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  name: MyString
-  photo_id: 
-  price: 1
-  place_id: 
-
-two:
-  name: MyString
-  photo_id: 
-  price: 1
-  place_id: 
+---
+Food_1:
+  id: 7
+  name: "Шаурма"
+  price: 120
+  place_id: 700
+  photo_id: 11
+  created_at: 2015-11-08 05:45:23.218072000 Z
+  updated_at: 2015-11-08 05:45:23.218072000 Z
+Food_2:
+  id: 8
+  name: "Хинкале"
+  price: 1000
+  place_id: 632
+  photo_id: 12
+  created_at: 2015-11-08 05:47:03.131380000 Z
+  updated_at: 2015-11-08 05:47:03.131380000 Z
+Food_3:
+  id: 9
+  name: "Пянсе"
+  price: 60
+  place_id: 701
+  photo_id: 14
+  created_at: 2015-11-08 05:52:21.826050000 Z
+  updated_at: 2015-11-08 05:52:21.826050000 Z
+Food_4:
+  id: 10
+  name: "Черный бургер"
+  price: 250
+  place_id: 697
+  photo_id: 15
+  created_at: 2015-11-08 05:54:01.537058000 Z
+  updated_at: 2015-11-08 05:54:01.537058000 Z

@@ -1,7 +1,33 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  photo_1x: MyString
-
-two:
-  photo_1x: MyString
+---
+Photo_11:
+  id: 11
+  created_at: 2015-11-08 05:45:11.333119000 Z
+  updated_at: 2015-11-08 05:45:11.333119000 Z
+  photo_file_name: 67690fd2d6891a999f37a1bbe9d47f00.png
+  photo_content_type: image/jpeg
+  photo_file_size: 432268
+  photo_updated_at: 2015-11-08 05:45:10.938468000 Z
+Photo_12:
+  id: 12
+  created_at: 2015-11-08 05:46:23.120563000 Z
+  updated_at: 2015-11-08 05:46:23.120563000 Z
+  photo_file_name: ae0c7b02a5cd0097db519215f53ab1bd.png
+  photo_content_type: image/jpeg
+  photo_file_size: 756725
+  photo_updated_at: 2015-11-08 05:46:22.680515000 Z
+Photo_14:
+  id: 14
+  created_at: 2015-11-08 05:52:01.822127000 Z
+  updated_at: 2015-11-08 05:52:01.822127000 Z
+  photo_file_name: ebf322e4cb0d3f9eee7447b506ee2d79.png
+  photo_content_type: image/jpeg
+  photo_file_size: 298843
+  photo_updated_at: 2015-11-08 05:52:01.567677000 Z
+Photo_15:
+  id: 15
+  created_at: 2015-11-08 05:53:47.399962000 Z
+  updated_at: 2015-11-08 05:53:47.399962000 Z
+  photo_file_name: 0d49f2d1722f75f1b11cb79a71efb802.png
+  photo_content_type: image/jpeg
+  photo_file_size: 206577
+  photo_updated_at: 2015-11-08 05:53:47.159240000 Z

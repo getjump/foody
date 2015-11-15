@@ -1,20 +1,25 @@
 Rails.application.routes.draw do
+
   apipie
-  get 'food' => 'food#get'
-  post 'food' => 'food#post'
+  namespace :api do
+    namespace :v1 do
+      get 'food' => 'food#get'
+      post 'food' => 'food#post'
 
-  get 'tags' => 'tags#get'
-  post 'tags' => 'tags#post'
+      get 'tags' => 'tags#get'
+      post 'tags' => 'tags#post'
 
-  get 'ratings' => 'ratings#get'
-  post 'ratings' => 'ratings#post'
-  delete 'ratings' => 'ratings#delete'
+      get 'ratings' => 'ratings#get'
+      post 'ratings' => 'ratings#post'
+      delete 'ratings' => 'ratings#delete'
 
-  get 'photos' => 'photos#get'
-  post 'photos' => 'photos#post'
+      get 'photos' => 'photos#get'
+      post 'photos' => 'photos#post'
 
-  get 'places' => 'places#get'
-  post 'places' => 'places#post'
+      get 'places' => 'places#get'
+      post 'places' => 'places#post'
+    end
+  end
 
 
   # The priority is based upon order of creation: first created -> highest priority.

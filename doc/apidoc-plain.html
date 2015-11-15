@@ -1,0 +1,749 @@
+  <h4><a href='#food'>Food</a></h4>
+  <ul>
+      <li><a href='#food-get'>get</a></li>
+      <li><a href='#food-post'>post</a></li>
+  </ul>
+  <h4><a href='#photos'>Photos</a></h4>
+  <ul>
+      <li><a href='#photos-get'>get</a></li>
+      <li><a href='#photos-post'>post</a></li>
+  </ul>
+  <h4><a href='#places'>Places</a></h4>
+  <ul>
+      <li><a href='#places-get'>get</a></li>
+      <li><a href='#places-post'>post</a></li>
+  </ul>
+  <h4><a href='#ratings'>Ratings</a></h4>
+  <ul>
+      <li><a href='#ratings-post'>post</a></li>
+      <li><a href='#ratings-delete'>delete</a></li>
+  </ul>
+  <h4><a href='#tags'>Tags</a></h4>
+  <ul>
+      <li><a href='#tags-get'>get</a></li>
+      <li><a href='#tags-post'>post</a></li>
+  </ul>
+
+
+
+  <hr/>
+
+  <div>
+    <h2 id="food">
+      <a href='#food'>Food</a><br>
+      <small></small>
+    </h2>
+  </div>
+
+
+  <div>
+
+      <hr/>
+
+      <h3 id="food-get">
+      <a href='#food'>Food</a> / <a href='#food-get'>get</a>
+      </h3>
+
+      <div>
+          <h4>
+              GET /api/v1/food
+            <br>
+            <small>Get food</small>
+          </h4>
+      </div>
+
+      <div>
+        
+<p>Return basic feed</p>
+
+
+
+          <h4>Params</h4>
+          <ul>
+    <li>
+      <strong>search </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be String</p>
+ ]
+      </small>
+      
+<p>String to search for in database</p>
+
+    </li>
+    
+    <li>
+      <strong>tags </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be an array of any type</p>
+ ]
+      </small>
+      
+<p>Array of tags ids to lookup for items with that tags</p>
+
+    </li>
+    
+    <li>
+      <strong>price </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be a Hash</p>
+ ]
+      </small>
+      
+<p>Price array</p>
+
+    </li>
+    <ul>
+    <li>
+      <strong>min </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be a number.</p>
+ ]
+      </small>
+      
+<p>Minimal price</p>
+
+    </li>
+    
+    <li>
+      <strong>max </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be a number.</p>
+ ]
+      </small>
+      
+<p>Maximal price</p>
+
+    </li>
+    
+</ul>
+
+    <li>
+      <strong>count </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be at max 100, and at min 0.</p>
+ ]
+      </small>
+      
+<p>Count of elements to get</p>
+
+    </li>
+    
+    <li>
+      <strong>offset </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be a number.</p>
+ ]
+      </small>
+      
+    </li>
+    
+</ul>
+
+      </div>
+      <hr/>
+
+      <h3 id="food-post">
+      <a href='#food'>Food</a> / <a href='#food-post'>post</a>
+      </h3>
+
+      <div>
+          <h4>
+              POST /api/v1/food
+            <br>
+            <small>Create food</small>
+          </h4>
+      </div>
+
+      <div>
+        
+<p>Create food</p>
+
+
+
+          <h4>Params</h4>
+          <ul>
+    <li>
+      <strong>name </strong>:
+      <small>
+        required
+        
+          [ 
+<p>Must be String</p>
+ ]
+      </small>
+      
+<p>Name that should be assigned to food</p>
+
+    </li>
+    
+    <li>
+      <strong>photo </strong>:
+      <small>
+        required
+        
+          [ 
+<p>Must be Integer</p>
+ ]
+      </small>
+      
+<p>Id of photo that should be assigned to food</p>
+
+    </li>
+    
+    <li>
+      <strong>place </strong>:
+      <small>
+        required
+        
+          [ 
+<p>Must be Integer</p>
+ ]
+      </small>
+      
+<p>Id of place that should be assigned to food</p>
+
+    </li>
+    
+    <li>
+      <strong>price </strong>:
+      <small>
+        required
+        
+          [ 
+<p>Must be Integer</p>
+ ]
+      </small>
+      
+<p>Price of food</p>
+
+    </li>
+    
+    <li>
+      <strong>tags </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be an Array of nested elements</p>
+ ]
+      </small>
+      
+<p>Array of tags ids to add for food</p>
+
+    </li>
+    <ul>
+    <li>
+      <strong> </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be Integer</p>
+ ]
+      </small>
+      
+<p>Tag id</p>
+
+    </li>
+    
+</ul>
+
+</ul>
+
+      </div>
+  </div>
+
+  <hr/>
+
+  <div>
+    <h2 id="photos">
+      <a href='#photos'>Photos</a><br>
+      <small></small>
+    </h2>
+  </div>
+
+
+  <div>
+
+      <hr/>
+
+      <h3 id="photos-get">
+      <a href='#photos'>Photos</a> / <a href='#photos-get'>get</a>
+      </h3>
+
+      <div>
+          <h4>
+              GET /api/v1/photos
+            <br>
+            <small>Return photo by id</small>
+          </h4>
+      </div>
+
+      <div>
+        
+
+
+          <h4>Params</h4>
+          <ul>
+    <li>
+      <strong>photo </strong>:
+      <small>
+        required
+        
+          [ 
+<p>Must be a number.</p>
+ ]
+      </small>
+      
+<p>Photo id</p>
+
+    </li>
+    
+</ul>
+
+      </div>
+      <hr/>
+
+      <h3 id="photos-post">
+      <a href='#photos'>Photos</a> / <a href='#photos-post'>post</a>
+      </h3>
+
+      <div>
+          <h4>
+              POST /api/v1/photos
+            <br>
+            <small>Upload photo</small>
+          </h4>
+      </div>
+
+      <div>
+        
+
+
+          <h4>Params</h4>
+          <ul>
+    <li>
+      <strong>photo </strong>:
+      <small>
+        required
+        
+          [ 
+<p>Must be String</p>
+ ]
+      </small>
+      
+<p>Base64 encoded photo</p>
+
+    </li>
+    
+</ul>
+
+      </div>
+  </div>
+
+  <hr/>
+
+  <div>
+    <h2 id="places">
+      <a href='#places'>Places</a><br>
+      <small></small>
+    </h2>
+  </div>
+
+
+  <div>
+
+      <hr/>
+
+      <h3 id="places-get">
+      <a href='#places'>Places</a> / <a href='#places-get'>get</a>
+      </h3>
+
+      <div>
+          <h4>
+              GET /api/v1/places
+            <br>
+            <small>Get places</small>
+          </h4>
+      </div>
+
+      <div>
+        
+<p>Return places</p>
+
+
+
+          <h4>Params</h4>
+          <ul>
+    <li>
+      <strong>name </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be String</p>
+ ]
+      </small>
+      
+<p>String to search for in database</p>
+
+    </li>
+    
+    <li>
+      <strong>location </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be an array of any type</p>
+ ]
+      </small>
+      
+<p>Array of location</p>
+
+    </li>
+    
+    <li>
+      <strong>count </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be at max 100, and at min 0.</p>
+ ]
+      </small>
+      
+<p>Count of elements to get</p>
+
+    </li>
+    
+    <li>
+      <strong>offset </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be a number.</p>
+ ]
+      </small>
+      
+    </li>
+    
+</ul>
+
+      </div>
+      <hr/>
+
+      <h3 id="places-post">
+      <a href='#places'>Places</a> / <a href='#places-post'>post</a>
+      </h3>
+
+      <div>
+          <h4>
+              POST /api/v1/places
+            <br>
+            <small>Add place</small>
+          </h4>
+      </div>
+
+      <div>
+        
+<p>Add place</p>
+
+
+
+          <h4>Params</h4>
+          <ul>
+    <li>
+      <strong>name </strong>:
+      <small>
+        required
+        
+          [ 
+<p>Must be String</p>
+ ]
+      </small>
+      
+<p>Name of a place</p>
+
+    </li>
+    
+    <li>
+      <strong>location </strong>:
+      <small>
+        required
+        
+          [ 
+<p>Must be an array of any type</p>
+ ]
+      </small>
+      
+<p>Array of location</p>
+
+    </li>
+    
+    <li>
+      <strong>address </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be String</p>
+ ]
+      </small>
+      
+<p>String address representation</p>
+
+    </li>
+    
+</ul>
+
+      </div>
+  </div>
+
+  <hr/>
+
+  <div>
+    <h2 id="ratings">
+      <a href='#ratings'>Ratings</a><br>
+      <small></small>
+    </h2>
+  </div>
+
+
+  <div>
+
+      <hr/>
+
+      <h3 id="ratings-post">
+      <a href='#ratings'>Ratings</a> / <a href='#ratings-post'>post</a>
+      </h3>
+
+      <div>
+          <h4>
+              POST /api/v1/ratings
+            <br>
+            <small>Add like</small>
+          </h4>
+      </div>
+
+      <div>
+        
+<p>Add like to object</p>
+
+
+
+          <h4>Params</h4>
+          <ul>
+    <li>
+      <strong>food </strong>:
+      <small>
+        required
+        
+          [ 
+<p>Must be a number.</p>
+ ]
+      </small>
+      
+<p>Id of food</p>
+
+    </li>
+    
+    <li>
+      <strong>status </strong>:
+      <small>
+        required
+        
+          [ 
+<p>Must be a number.</p>
+ ]
+      </small>
+      
+<p>Like type, 0 - tried, 1 - liked</p>
+
+    </li>
+    
+    <li>
+      <strong>device </strong>:
+      <small>
+        required
+        
+          [ 
+<p>Must be String</p>
+ ]
+      </small>
+      
+<p>Device hash to associate like with</p>
+
+    </li>
+    
+</ul>
+
+      </div>
+      <hr/>
+
+      <h3 id="ratings-delete">
+      <a href='#ratings'>Ratings</a> / <a href='#ratings-delete'>delete</a>
+      </h3>
+
+      <div>
+          <h4>
+              DELETE /api/v1/ratings
+            <br>
+            <small>Remove like</small>
+          </h4>
+      </div>
+
+      <div>
+        
+<p>Remove like from object</p>
+
+
+
+          <h4>Params</h4>
+          <ul>
+    <li>
+      <strong>food </strong>:
+      <small>
+        required
+        
+          [ 
+<p>Must be a number.</p>
+ ]
+      </small>
+      
+<p>Id of food</p>
+
+    </li>
+    
+    <li>
+      <strong>device </strong>:
+      <small>
+        required
+        
+          [ 
+<p>Must be String</p>
+ ]
+      </small>
+      
+<p>Device hash</p>
+
+    </li>
+    
+</ul>
+
+      </div>
+  </div>
+
+  <hr/>
+
+  <div>
+    <h2 id="tags">
+      <a href='#tags'>Tags</a><br>
+      <small></small>
+    </h2>
+  </div>
+
+
+  <div>
+
+      <hr/>
+
+      <h3 id="tags-get">
+      <a href='#tags'>Tags</a> / <a href='#tags-get'>get</a>
+      </h3>
+
+      <div>
+          <h4>
+              GET /api/v1/tags
+            <br>
+            <small>Return tags</small>
+          </h4>
+      </div>
+
+      <div>
+        
+<p>Return tags</p>
+
+
+
+          <h4>Params</h4>
+          <ul>
+    <li>
+      <strong>name </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be String</p>
+ ]
+      </small>
+      
+<p>Lookup for string in database</p>
+
+    </li>
+    
+</ul>
+
+      </div>
+      <hr/>
+
+      <h3 id="tags-post">
+      <a href='#tags'>Tags</a> / <a href='#tags-post'>post</a>
+      </h3>
+
+      <div>
+          <h4>
+              POST /api/v1/tags
+            <br>
+            <small>Create tag</small>
+          </h4>
+      </div>
+
+      <div>
+        
+<p>Create tag</p>
+
+
+
+          <h4>Params</h4>
+          <ul>
+    <li>
+      <strong>name </strong>:
+      <small>
+        required
+        
+          [ 
+<p>Must be String</p>
+ ]
+      </small>
+      
+<p>Name for new tag</p>
+
+    </li>
+    
+</ul>
+
+      </div>
+  </div>
