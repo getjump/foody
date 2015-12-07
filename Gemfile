@@ -62,6 +62,7 @@ gem 'db_fixtures_dump'
 gem 'apipie-rails'
 
 group :development, :test do
+  gem 'meta_request'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
 end
