@@ -39,7 +39,5 @@ module Foody
     }
 
     Aws.config[:region] = 'eu-central-1'
-
-    Elasticsearch::Model.client = Elasticsearch::Client.new host: ENV['SEARCHBOX_URL']
   end
 end

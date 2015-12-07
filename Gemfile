@@ -45,10 +45,6 @@ gem 'puma'
 # SEARCH
 gem 'pg_search'
 
-# ELASTIC SEARCH
-gem 'elasticsearch-model'
-gem 'elasticsearch-rails'
-
 # FILE JOB
 gem 'carrierwave', :git => 'git://github.com/carrierwaveuploader/carrierwave.git'
 
@@ -77,4 +73,3 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
-
