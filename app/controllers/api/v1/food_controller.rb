@@ -56,13 +56,12 @@ module Api
       param :offset, :number, descs: 'Offset to get elements from', min: 0
 
       def get
-        count = Food.all
-
         unless params[:search].nil?
           food = Food.search_by_name(params[:search]).group("#{PgSearch::Configuration.alias('foods')}.rank").top
-          count = Food.search_by_name(params[:search]).group("#{PgSearch::Configuration.alias('foods')}.rank, foods.id")
+          count = food.group("foods.id")
         else
           food = Food.top
+          count = Food.all
         end
 
         unless params[:count].nil?
@@ -74,12 +73,12 @@ module Api
         end
 
         unless params[:tags].nil?
-          food = food.joins(:tags)
-          count = count.joins(:tags)
-          params[:tags].each do |tag_id|
-            count = count.where("tags.id" => tag_id)
-            food = food.where("tags.id" => tag_id)
-          end
+          food = food.joins(:tags).where("tags.id" => params[:tags])
+          count = count.joins(:tags).where("tags.id" => params[:tags])
+        #   params[:tags].each do |tag_id|
+        #     count = count.where("tags.id" => tag_id)
+        #     food = food.where("tags.id" => tag_id)
+        #   end
         end
 
         unless params[:price].nil?
@@ -97,13 +96,9 @@ module Api
 
         fc = Collection.new
 
-        fc.items = food
+        fc.items = food.includes(:place).includes(:tags).includes(:photo).includes(:ratings)
 
-        unless count.count.class == Fixnum
-          fc.count = count.count.length
-        else
-          fc.count = count.count
-        end
+        fc.count = count.count
 
         obj = FoodCollectionRepresenter.new(fc)
 

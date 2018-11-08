@@ -26,7 +26,7 @@ module Api
           status = 500
         end
 
-        render json: obj.extend(ApiAnswerRepresenter).to_json, :status => status
+        render json: obj.extend(ApiAnswerRepresenter), :status => status
       end
 
       def error_render_method_without_output

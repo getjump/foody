@@ -62,7 +62,11 @@ gem 'db_fixtures_dump'
 gem 'apipie-rails'
 
 group :development, :test do
+  gem 'bullet'
+  gem 'ruby-growl'
   gem 'meta_request'
+  gem 'rails-erd'
+  gem 'railroady'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
 end
